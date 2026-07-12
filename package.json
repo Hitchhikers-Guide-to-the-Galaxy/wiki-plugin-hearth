@@ -1,19 +1,30 @@
 {
   "name": "wiki-plugin-hearth",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Federated Wiki hearth item — marks a page as keeping to its hearth: a coloured halo, and (with wiki-plugin-hitchhiker) hard to fork or publish outside its home farm.",
   "type": "module",
   "main": "client/hearth.js",
-  "files": ["client", "pages", "factory.json"],
+  "files": [
+    "client",
+    "pages",
+    "factory.json"
+  ],
   "scripts": {
     "build": "node scripts/build.js",
     "test": "node --test"
   },
   "dependencies": {},
-  "devDependencies": { "esbuild": "^0.25.0" },
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  },
   "author": "David Bovill",
   "license": "MIT",
-  "repository": { "type": "git", "url": "git+https://github.com/Hitchhikers-Guide-to-the-Galaxy/wiki-plugin-hearth.git" },
-  "bugs": { "url": "https://github.com/Hitchhikers-Guide-to-the-Galaxy/wiki-plugin-hearth/issues" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hitchhikers-Guide-to-the-Galaxy/wiki-plugin-hearth.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Hitchhikers-Guide-to-the-Galaxy/wiki-plugin-hearth/issues"
+  },
   "homepage": "https://github.com/Hitchhikers-Guide-to-the-Galaxy/wiki-plugin-hearth#readme"
 }

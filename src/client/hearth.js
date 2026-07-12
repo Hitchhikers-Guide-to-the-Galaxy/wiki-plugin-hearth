@@ -6,9 +6,12 @@
  * warm halo and shows its own plain-text notice, so even a copy that escapes to
  * a wiki without our client still carries the words that ask it home.
  *
- * The teeth — blocking fork, drag-out and drop-in — live in wiki-plugin-hitchhiker's
- * wiki-ux.js, which runs farm-wide and detects this item by the `hearth-page`
- * class this file adds. See the hearth-pages spec on mouse.localhost.
+ * This file carries its own first teeth: the journal's fork button is hidden
+ * on a hearth page, and on a non-origin copy double-click editing is blocked
+ * (editing away from home would fork the page). The heavier teeth — blocking
+ * flag drag-out and drop-in — live in wiki-plugin-hitchhiker's wiki-ux.js,
+ * which runs farm-wide and detects this item by the `hearth-page` class this
+ * file adds. See the hearth-pages spec on mouse.localhost.
  *
  * Licensed under the MIT license.
  */
@@ -49,10 +52,31 @@ export const countdown = (expires, now = Date.now()) => {
   return `disappears in ${m}m`
 }
 
+// The hearth's own teeth. Editing a page away from its origin implicitly
+// forks it, so on a remote page a capture-phase listener swallows dblclick
+// before any item's edit handler sees it. Remoteness is checked at event
+// time — the page element persists across refreshes, its classes change.
+export const guardPage = $page => {
+  const el = $page[0]
+  if (!el || el.dataset.hearthGuard) return
+  el.dataset.hearthGuard = '1'
+  el.addEventListener(
+    'dblclick',
+    e => {
+      if ($page.hasClass('remote')) {
+        e.preventDefault()
+        e.stopPropagation()
+      }
+    },
+    true,
+  )
+}
+
 export const emit = (div, item) => {
   const opts = parse(item.text || '')
   const $page = div.parents('.page')
   $page.addClass('hearth-page')
+  guardPage($page)
 
   const cd = countdown(opts.expires)
   div.html(`
@@ -78,7 +102,8 @@ if (typeof window !== 'undefined') {
     s.id = 'hearth-style'
     s.textContent =
       '.page.hearth-page{box-shadow:inset 0 0 0 3px rgba(200,120,40,0.5),0 0 22px rgba(200,120,40,0.35);' +
-      'background:linear-gradient(rgba(200,120,40,0.05),rgba(200,120,40,0.05));}'
+      'background:linear-gradient(rgba(200,120,40,0.05),rgba(200,120,40,0.05));}' +
+      '.page.hearth-page .fork-page{display:none;}'
     document.head.appendChild(s)
   }
 }

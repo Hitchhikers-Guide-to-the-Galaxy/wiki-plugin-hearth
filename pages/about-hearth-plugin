@@ -30,7 +30,7 @@
     {
       "type": "markdown",
       "id": "75f3d9fb92f34d8b",
-      "text": "## The Teeth\n\nEnforcement lives in the hitchhiker UX layer (`wiki-plugin-hitchhiker`), farm-wide: a capture listener blocks dragging a hearth page's flag out, and the drop handler refuses to import a hearth-marked page. Enforcement is total only where that client runs; elsewhere the mark is etiquette, friction and provenance. Soft security by design."
+      "text": "## The Teeth\n\nThe plugin carries the first teeth itself. On a hearth page the journal's fork button is hidden. On a copy viewed away from its origin, double-click editing is blocked — editing there would fork the page.\n\nThe heavier teeth live in the hitchhiker UX layer (`wiki-plugin-hitchhiker`), farm-wide: a capture listener blocks dragging a hearth page's flag out, and the drop handler refuses to import a hearth-marked page. Enforcement is total only where these clients run; elsewhere the mark is etiquette, friction and provenance. Soft security by design."
     },
     {
       "type": "markdown",
@@ -79,7 +79,7 @@
           {
             "type": "markdown",
             "id": "75f3d9fb92f34d8b",
-            "text": "## The Teeth\n\nEnforcement lives in the hitchhiker UX layer (`wiki-plugin-hitchhiker`), farm-wide: a capture listener blocks dragging a hearth page's flag out, and the drop handler refuses to import a hearth-marked page. Enforcement is total only where that client runs; elsewhere the mark is etiquette, friction and provenance. Soft security by design."
+            "text": "## The Teeth\n\nThe plugin carries the first teeth itself. On a hearth page the journal's fork button is hidden. On a copy viewed away from its origin, double-click editing is blocked — editing there would fork the page.\n\nThe heavier teeth live in the hitchhiker UX layer (`wiki-plugin-hitchhiker`), farm-wide: a capture listener blocks dragging a hearth page's flag out, and the drop handler refuses to import a hearth-marked page. Enforcement is total only where these clients run; elsewhere the mark is etiquette, friction and provenance. Soft security by design."
           },
           {
             "type": "markdown",
