@@ -1,0 +1,100 @@
+{
+  "title": "About Hearth Plugin",
+  "story": [
+    {
+      "type": "markdown",
+      "id": "632dcee19d39899f",
+      "text": "The **Hearth Plugin**, `wiki-plugin-hearth`, marks a page as keeping to its hearth — meant to stay in the space it was written in. The `hearth` item paints the page with a warm halo and a plain notice, and, where the hitchhiker UX layer runs, makes the page hard to fork or publish out."
+    },
+    {
+      "type": "markdown",
+      "id": "431e4984677c0378",
+      "text": "## Repositories\n\n- [https://github.com/Hitchhikers-Guide-to-the-Galaxy/wiki-plugin-hearth github]\n- [https://www.npmjs.com/package/wiki-plugin-hearth npm]"
+    },
+    {
+      "type": "markdown",
+      "id": "4c66a11aaef72ada",
+      "text": "## Item Text\n\nCommands follow the wiki DSL convention: uppercase first word, optional colon.\n\n- `NOTE <text>` overrides the notice shown on the page.\n- `EXPIRES <iso>` declares a disappearing page — a reaper reads it server-side to hard-delete the page once past."
+    },
+    {
+      "type": "code",
+      "id": "6183a191ba2b4a79",
+      "text": "NOTE Mice only — keeps to the private farm.\nEXPIRES 2026-07-14T18:00Z",
+      "language": "text"
+    },
+    {
+      "type": "markdown",
+      "id": "94e6c064fce615da",
+      "text": "## The Halo and the Poison Pill\n\nOn render the item adds a `hearth-page` class to the whole page (the halo CSS) and shows its notice. Because story items travel with a fork, an escaped copy still renders the notice on any farm running the plugin — and shows the raw words even on one that does not. The mark asks the page home wherever it lands."
+    },
+    {
+      "type": "markdown",
+      "id": "75f3d9fb92f34d8b",
+      "text": "## The Teeth\n\nEnforcement lives in the hitchhiker UX layer (`wiki-plugin-hitchhiker`), farm-wide: a capture listener blocks dragging a hearth page's flag out, and the drop handler refuses to import a hearth-marked page. Enforcement is total only where that client runs; elsewhere the mark is etiquette, friction and provenance. Soft security by design."
+    },
+    {
+      "type": "markdown",
+      "id": "42ad5913edbbcd15",
+      "text": "## Requirements\n\nClient-only, no server component. The halo and notice render anywhere the plugin is installed. The fork and drop blocks require `wiki-plugin-hitchhiker`; the disappearing-page reaper is a separate scheduled script."
+    },
+    {
+      "type": "markdown",
+      "id": "6996e880339a8dd8",
+      "text": "# See\n\n- [[Index Of Plugins]]\n- [[Chat Plugin]]"
+    }
+  ],
+  "plugin": "hearth",
+  "journal": [
+    {
+      "type": "create",
+      "item": {
+        "title": "About Hearth Plugin",
+        "story": [
+          {
+            "type": "markdown",
+            "id": "632dcee19d39899f",
+            "text": "The **Hearth Plugin**, `wiki-plugin-hearth`, marks a page as keeping to its hearth — meant to stay in the space it was written in. The `hearth` item paints the page with a warm halo and a plain notice, and, where the hitchhiker UX layer runs, makes the page hard to fork or publish out."
+          },
+          {
+            "type": "markdown",
+            "id": "431e4984677c0378",
+            "text": "## Repositories\n\n- [https://github.com/Hitchhikers-Guide-to-the-Galaxy/wiki-plugin-hearth github]\n- [https://www.npmjs.com/package/wiki-plugin-hearth npm]"
+          },
+          {
+            "type": "markdown",
+            "id": "4c66a11aaef72ada",
+            "text": "## Item Text\n\nCommands follow the wiki DSL convention: uppercase first word, optional colon.\n\n- `NOTE <text>` overrides the notice shown on the page.\n- `EXPIRES <iso>` declares a disappearing page — a reaper reads it server-side to hard-delete the page once past."
+          },
+          {
+            "type": "code",
+            "id": "6183a191ba2b4a79",
+            "text": "NOTE Mice only — keeps to the private farm.\nEXPIRES 2026-07-14T18:00Z",
+            "language": "text"
+          },
+          {
+            "type": "markdown",
+            "id": "94e6c064fce615da",
+            "text": "## The Halo and the Poison Pill\n\nOn render the item adds a `hearth-page` class to the whole page (the halo CSS) and shows its notice. Because story items travel with a fork, an escaped copy still renders the notice on any farm running the plugin — and shows the raw words even on one that does not. The mark asks the page home wherever it lands."
+          },
+          {
+            "type": "markdown",
+            "id": "75f3d9fb92f34d8b",
+            "text": "## The Teeth\n\nEnforcement lives in the hitchhiker UX layer (`wiki-plugin-hitchhiker`), farm-wide: a capture listener blocks dragging a hearth page's flag out, and the drop handler refuses to import a hearth-marked page. Enforcement is total only where that client runs; elsewhere the mark is etiquette, friction and provenance. Soft security by design."
+          },
+          {
+            "type": "markdown",
+            "id": "42ad5913edbbcd15",
+            "text": "## Requirements\n\nClient-only, no server component. The halo and notice render anywhere the plugin is installed. The fork and drop blocks require `wiki-plugin-hitchhiker`; the disappearing-page reaper is a separate scheduled script."
+          },
+          {
+            "type": "markdown",
+            "id": "6996e880339a8dd8",
+            "text": "# See\n\n- [[Index Of Plugins]]\n- [[Chat Plugin]]"
+          }
+        ]
+      },
+      "date": 1783860621343,
+      "provenance": "Authored by an AI agent — Claude Code (claude-fable-5) via the [[fedwiki-page]] skill. [https://claude.com/claude-code Claude Code]"
+    }
+  ]
+}
