@@ -1,6 +1,6 @@
 {
   "name": "wiki-plugin-hearth",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Federated Wiki hearth item — marks a page as keeping to its hearth: a coloured halo, and (with wiki-plugin-hitchhiker) hard to fork or publish outside its home farm.",
   "type": "module",
   "main": "client/hearth.js",
@@ -26,5 +26,23 @@
   "bugs": {
     "url": "https://github.com/Hitchhikers-Guide-to-the-Galaxy/wiki-plugin-hearth/issues"
   },
-  "homepage": "https://github.com/Hitchhikers-Guide-to-the-Galaxy/wiki-plugin-hearth#readme"
+  "homepage": "https://github.com/Hitchhikers-Guide-to-the-Galaxy/wiki-plugin-hearth#readme",
+  "fedwiki": {
+    "requires": {
+      "plugins": [
+        {
+          "package": "wiki-plugin-hitchhiker",
+          "seat": "hitchhiker",
+          "range": "^0.5.0",
+          "level": "recommended",
+          "why": "supplies the drag/fork guard; without it a hearth item is a coloured halo and nothing more"
+        }
+      ]
+    },
+    "provides": {
+      "seats": [
+        "hearth"
+      ]
+    }
+  }
 }
